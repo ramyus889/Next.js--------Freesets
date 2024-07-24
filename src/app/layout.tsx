@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import { Mooli } from "next/font/google";
 import "./globals.css";
 
-import { TanstackProviders } from "./TanstackProviders";
+import NavBarButton from "./components/NavBarButton";
 import "/css/fontStyle.css";
 import "/css/Uiverse.css";
-import NavBarButton from "./components/NavBarButton";
 
 const fontStyle = Mooli({ subsets: ["latin"], weight: "400" });
 
@@ -22,10 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning={true}>
       <body className={fontStyle.className}>
-        <TanstackProviders>
-          <NavBarButton />
-          {children}
-        </TanstackProviders>
+        <NavBarButton />
+        {children}
       </body>
     </html>
   );
